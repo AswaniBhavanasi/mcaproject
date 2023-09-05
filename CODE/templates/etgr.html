@@ -1,0 +1,116 @@
+ if re.search(url) != None:
+            urlval = 1
+        else:
+            urlval = 0
+
+        if int(number) >= 6:
+            ageval = 1
+        else:
+            ageval = 0
+
+        if int( charset) >= 54:
+            lengthval = 1
+        else:
+            lengthval = 0
+
+        if int(server) >= 100000:
+            trafficval = 1
+        else:
+            trafficval = 0
+
+        if int(content) >= 100000:
+            anchorval = 1
+        else:
+            anchorval = 0
+
+        if int( conv) >= 100000:
+            reqval = 1
+        else:
+            reqval = 0
+
+        if int(dist) >= 100000:
+            stateval = 1
+        else:
+            stateval = 0
+
+        if int( remote) >= 100000:
+            popupsval = 1
+        else:
+            popupsval = 0
+
+        if int( bytes) >= 100000:
+            sfhval = 1
+        else:
+            sfhval = 0
+
+        if int(packets) >= 100000:
+            sfhval = 1
+        else:
+            sfhval = 0
+
+        if int( times) >= 100000:
+            sfhval = 1
+        else:
+            sfhval = 0
+
+
+ {% if msg == "predictsucess" %}
+            <div class="container">
+                {% if predvalue == 1 %}
+                    <script>
+		alert("This website is malicious");
+    </script>
+                </div>
+                {% endif %}
+                {% if predvalue == 0 %}
+    <script>
+		alert("This website is a benign url");
+    </script>
+                </div>
+                {% endif %}
+            </div>
+        {% endif %}
+<center align="center">
+  <form action="{{url_for('prediction')}}"  name="myForm"  method=["post","get"] >
+   <center style="black">
+       <table style="color:blue">
+     <tr><td>ENTER URL LENGTH: </td>
+     <td><input type="text" name="url_len"></td></tr>
+     <tr ><td height="10"></td></tr>
+
+     <tr><td>ENTER NUMBER OF SPECIAL CHARACTERS: </td>
+     <td><input type="text" name="NUMBER_SPECIAL_CHARACTERS"></td></tr>
+     <tr ><td height="10"></td></tr>
+
+       <tr><td>ENTER CONTENT_LENGTH: </td>
+     <td><input type="text" name="CONTENT_LENGTH"></td></tr>
+    <tr ><td height="10"></td></tr>
+
+               <tr><td>ENTER SOURCE_APP_BYTES:</td>
+     <td><input type="text" name="SOURCE_APP_BYTES"></td></tr>
+     <tr ><td height="10"></td></tr>
+
+               <tr><td> ENTER APP_PACKETS:</td>
+     <td><input type="text" name="APP_PACKETS"></td></tr>
+     <tr ><td height="10"></td></tr>
+
+        <tr>
+    <td style="color:thick black"><input type="submit" value="Submit"></td>
+
+   </table>
+</center>
+  </form>
+</center>
+   <script src="static/js/jquery.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+	<script src="static/js/wow.min.js"></script>
+	<script>
+	wow = new WOW(
+	 {
+
+		}	)
+		.init();
+	</script>
+    </div>
+  </body>
+</html>
